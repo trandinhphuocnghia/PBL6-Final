@@ -1,0 +1,200 @@
+.checkout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inforcheckout{
+    margin: 40px 0;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shipping{
+    width: 65%;
+    background: #fff;
+    border-radius: 8px;
+    border:none;
+    height: 60vh;
+    display: flex;
+   justify-content: space-between;
+   align-items: center;   
+}
+.shipform{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 0.5px solid #fff;
+}
+
+.shipinfor{
+    width: 90%;
+    border-radius: 8px;
+    height: 50px;
+    margin: 20px 0;
+    font-size: 18px;
+
+}
+.Confirm{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+}
+.Confirm:before{
+    width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  position: absolute;
+  background-image: url('../../img/letter.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center ;
+}
+.cartshipping{
+    width: 100%;
+    background: rgb(214, 210, 210);
+    border-radius: 8px;
+    border:none;
+    display: flex;
+    flex-direction: column;
+}
+.listcard{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.bill{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    border-bottom: 0.5px solid rgb(133, 130, 130);
+}
+.billdetail{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalbill{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.btncheckout{
+    width: 500px;
+    background: #fff;
+    height: 20vh;
+    margin-bottom: -20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    width: 100px;
+    height: 100px;
+    background-color: goldenrod;
+}
+
+.icon{
+    width: 40px;
+    height: 40px;
+}
+
+.icon3{
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+.bagicon{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.dollar{
+    color:#fff;
+    margin-right: 5px;
+    font-size: 40px;
+}
+.icon2{
+    margin: 5px 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.btnreturn{
+    width:100%;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    height: 50px;
+    color:#fff;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    align-items: center;
+    border:none;
+    background-color: crimson;
+}
+.btnreturn span{
+    margin-right: 5px;
+}
+.billdetail{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.billdetail h4{
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.billdetail p{
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    margin: 0 5px 0 20px;
+}
+
+.totalbill{
+    margin: 15px 0;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.totalbill h4{
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.totalbill p{
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    margin: 0 5px 0 20px;
+}

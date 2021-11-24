@@ -1,0 +1,264 @@
+.products{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    justify-items: center;
+    margin: 20px 0;
+}
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-color: #3fb2f5;
+    background-image: linear-gradient(160deg, #6dc6fa 0%, #80D0C7 100%); 
+    /* Set a specific height */
+    height: 80vh;
+    width: 100%;
+    /* Position and center the image to scale nicely on all screens */
+    position: relative;
+    margin: 50px 0px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.phonecall{
+    margin-top: 50px;
+    width:100%;
+    height: 10vh;
+    background-color: #740941;
+    color: #fff;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phonecall span{
+    color: gold;
+}
+
+  .Title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+  }
+  .titledetail{
+      color: #fff;
+      text-shadow: rgb(68, 68, 67) 1px 0 10px;
+  }
+  .titledetail2{
+    color: #263575;
+    text-shadow: rgb(68, 68, 67) 1px 0 10px;
+}
+
+ .Infor{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    position: relative;
+ } 
+ .Img {
+     width: 50%;
+     
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom-right-radius: 8px;
+     border-top-right-radius: 8px;
+ } 
+ .Img img{
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+     width: 100%;
+     height: 80vh;
+     object-fit: fill;
+     animation-name: fadeVisibility;
+     animation-duration: 3s;
+     animation-fill-mode: both;
+ }
+ .Intro{
+     width: 80%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color: cornsilk;
+     animation-name: fadeInBottom;
+     animation-duration: 2.5s;
+     animation-fill-mode: both;
+ }
+ .Intro h1{
+     font-size: 50px;
+     margin: 20px 0;
+     font-style: italic;
+ }
+ .Intro p{
+     font-size: 25px;
+     text-align: center;
+     margin-bottom: 20px;
+ }
+ .Intro h3{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+ }
+ @keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+@keyframes fadeVisibility {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: opacity linear;
+    }
+  }
+    
+  /* Place text in the middle of the image */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+/* ----------- Product Item ----------------- */
+@import url("../utils/productItem/productItem.css");
+
+.delete-all{
+    text-align: right;
+    margin: 20px;
+}
+.delete-all input{
+    height: 25px;
+    width: 25px;
+    transform: translateY(5px);
+    margin: 0 15px;
+}
+.delete-all span{
+    text-transform: uppercase;
+    color: rgb(3, 165, 206);
+    letter-spacing: 1.3px;
+}
+.delete-all button{
+    border: 1px solid crimson;
+    padding: 10px 25px;
+    color: rgb(245, 243, 243);
+    background-color: crimson;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.delete-all button:hover{
+    opacity: 0.5;
+}
+
+/* ------------ Filters Menu ----------------- */
+.filter_menu{
+    width: 100%;
+    min-height: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+.filter_menu select, input{
+    border: 1px solid #ccc;
+    outline: none;
+    height: 40px;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+.filter_menu input{
+    flex: 1;
+    margin: 0 10px;
+}
+.filter_menu select{
+    background-color: rgb(3, 165, 206);
+    color:aliceblue;
+    font-size: 18px;
+}
+
+/* -------------------- Load More --------------- */
+.load_more{
+    text-align: center;
+}
+.load_more button{
+    padding: 10px 25px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    text-transform: capitalize;
+}
+
+.banner{
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    height: 70vh;
+    background-image: url('../../../img/bannerproduct2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position:center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opacity{
+    position: absolute;
+    width: 100%;
+    opacity: 0.5;
+    height: 70vh;
+    z-index: 10;
+    background-color: rgb(24, 23, 23);
+}
+.introproduct{
+    position: absolute;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+}
+.introproduct h1{
+    font-size: 80px;
+    font-weight: 600;
+    font-style: italic;
+    margin: 20px 0;
+    width: 0ch;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: text 10s steps(20) infinite alternate;
+}
+.introproduct p{
+    width:400px;
+    color: #fff;
+    
+    font-weight: 500;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: rgb(10, 183, 189) 1px 0 10px;
+    border-radius: 8px;
+}
+@keyframes text {
+    0%{
+        width: 0ch;
+    }
+    50%{
+        width: 22ch;
+    }
+    
+}
+

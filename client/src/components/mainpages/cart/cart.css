@@ -1,0 +1,92 @@
+.cart{
+    position: relative;
+    border: 1px solid #ccc;
+    transform: scaleY(0.98);
+    animation: fadeInBottom 2s both;
+}
+.amount span{
+    color: crimson;
+    padding: 0 20px;
+}
+.amount button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #777;
+}
+.delete{
+    position: absolute;
+    top:0;
+    right: 5px;
+    color: crimson;
+    font-weight: 900;
+    cursor: pointer;
+}
+.total{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeInBottom 2.5s both;
+    margin-bottom: 40px ;
+}
+
+.total h3{
+    color: crimson;
+    background-color: #fff;
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select{
+    width: 400px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#btn_select{
+    background-color: darkgoldenrod;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #fff;
+}
+#btn_checkout{
+    background-color: crimson;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #fff;
+}
+.desimgcart{
+    max-width: 600px;
+    height: 450px;
+}
+.exit{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.exit:hover{
+    background-color: red;
+    border-radius: 50%;
+}
+#btn_view_cart{
+    color: darkgoldenrod;
+}
+#btn_view_cart:hover{
+    font-weight: 700;
+    color: rgb(7, 128, 165);
+}

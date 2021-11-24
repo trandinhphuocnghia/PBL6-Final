@@ -1,0 +1,104 @@
+#### 1/ Docker service for php, nginx:
+
+###### -- Service for php:
+
+`sudo docker image ls`
+
+pic :
+
+
+
+###### --Config Dockerfile for php:
+
+`sudo docker pull php:7.4-cli`
+
+`COPY . /usr/src/myapp`
+
+`WORKDIR /usr/src/myapp`
+
+`CMD [ "php", "./index.php" ]`
+
+pic:
+
+###### -- Run images:
+
+`docker build -t my-php-app .`
+
+pic:
+
+
+
+`docker run -it --rm --name my-running-app my-php-app`
+
+pic:
+
+
+
+###### -- Service for nginx:
+
+`docker pull nginx:latest`
+
+`docker run -p 8000:80 nginx`
+
++) create index.php file to show php infor:
+
+`sudo nano /var/www/html/index.php`
+
++) run :
+
+`docker run -i -t -v /var/www/html/index.php --name nginx-phpinfo -p 8000:80 nginx`
+
+ 
+
+pic:
+
+
+
+#### 2/ config docker-compose.yml:
+
+pic:
+
+
+
+`sudo docker-compose up `
+
+pic:
+
+####  3/  Service mysql :
+
+###### -- Dockerfile:
+
+pic:
+
+
+
+###### -- Config docker-compose.yml :
+
+pic:
+
+
+
+`sudo docker-compose up -d`
+
+
+
+pic:
+
+
+
+###### -- Check DB:
+
+
+
+###### -- Connect :
+
+
+
+
+
+
+
+###### 
+
+
+
