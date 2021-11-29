@@ -4,6 +4,7 @@ import axios from 'axios'
 
 function ProductsAPI() {
     const [products, setProducts] = useState([])
+    const [productTitle, setProductTitle] = useState([])
     const [callback, setCallback] = useState(false)
     const [category, setCategory] = useState('')
     const [images,setImages] = useState([])
@@ -26,6 +27,8 @@ function ProductsAPI() {
         
         
     },[callback, category, sort, search, page])
+
+
    // console.log(products[1].images)
     return {
         products: [products, setProducts],

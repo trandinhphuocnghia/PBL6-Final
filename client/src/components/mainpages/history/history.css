@@ -13,6 +13,9 @@
 .history-page h2{
     color: #263575;
 }
+.history-page h4{
+    color: crimson;
+}
 .history-page table{
     margin: auto;
     margin-bottom: 20px;

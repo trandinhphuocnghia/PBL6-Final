@@ -6,6 +6,7 @@ import axios from 'axios'
 import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Footer from '../../footer/Footer'
+import ProductItem2 from '../utils/productItem/ProductItemA'
 
 function Products() {
     const state = useContext(GlobalState)
@@ -59,7 +60,9 @@ function Products() {
     if(loading) return <div><Loading /></div>
     return (
         <>
-       
+       {
+           isAdmin ?  <h3 className="pagename">Product Management</h3> : ""
+       }
        {
            isAdmin ? '' :
            <div className="banner">
@@ -85,6 +88,8 @@ function Products() {
             </div>
         }
         
+        {
+            !isAdmin ?
         <div className="products">
             {
                 products.map(product => {
@@ -96,7 +101,20 @@ function Products() {
                 })
             } 
         </div>
+        :
+        <div className="Adminproduct">
+            {
 
+                products.map(
+                    product => {
+                        return <ProductItem2 key={product._id} product={product}
+                        isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
+                    }
+                )
+            }
+            <h3>END!</h3>
+        </div>
+        }
         <LoadMore />
         {products.length === 0 && <Loading />}
 

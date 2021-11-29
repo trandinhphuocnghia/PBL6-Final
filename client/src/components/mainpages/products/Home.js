@@ -9,7 +9,33 @@ import Img from '../../../img/banner.jpg'
 import Footer from '../../footer/Footer'
 import Slider from '../../Slider/Slider'
 import { Link } from 'react-router-dom'
+import right from '../../../img/right.svg'
+import Slider2 from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "flex", background: "goldenrod",width:"50px",height:"50px",justifyContent:"center",alignItems:"center",borderRadius:'50%',marginRight:'5px' }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "flex", background: "goldenrod",width:"50px",height:"50px",justifyContent:"center",alignItems:"center",borderRadius:'50%',marginLeft:'5px',zIndex:'1111'  }}
+        onClick={onClick}
+      />
+    );
+  }
 function Homes() {
     const state = useContext(GlobalState)
     const [products, setProducts] = state.productsAPI.products
@@ -64,6 +90,20 @@ function Homes() {
         })
     }
 
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
+  
+      };
+
+
+
+
     if(loading) return <div><Loading /></div>
     return (
         <>
@@ -89,23 +129,29 @@ function Homes() {
 
         <div className="Title">
             <h1 className="titledetail">
-                What We have?
+                <p>Some new products</p>
             </h1>
         </div>
 
        
 
-        <Link to="/product">For more products</Link>
         
-        <div className="products">
+        
+        <Slider2 {...settings}>
             {
                 products.map(product => {
                     return <ProductItem key={product._id} product={product}
                     isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
                 })
             } 
-        </div>
+        </Slider2>
 
+
+        <div className="Title">
+        <Link className="mproducts" to="/product"><p>For more products</p>
+        <img src={right}></img>
+        </Link>
+        </div>
         
         {products.length === 0 && <Loading />}
         <div className="Title">

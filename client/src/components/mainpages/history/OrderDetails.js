@@ -113,30 +113,7 @@ function OrderDetails() {
 
     return (
         <div className="history-page">
-            <h2>Payment DetailS</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Postal Code</th>
-                        <th>Country Code</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{orderDetails.address.recipient_name}</td>
-                        <td>{orderDetails.address.line1 + " - " + orderDetails.address.city}</td>
-                        <td>{orderDetails.address.postal_code}</td>
-                        <td>{orderDetails.address.country_code}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div className="alertship">
-            <img className="alerticon" src={check}></img>
-            <h3>Thanh toán thành công</h3>
-            </div>
-            <h2>Details</h2>
+            <h2>Details Product</h2>
             <table style={{margin: "30px 0px 30px 10px"}}>
                 <thead>
                     <tr>
@@ -164,6 +141,32 @@ function OrderDetails() {
             <h3>Total: ${orderDetails.total}</h3>
             <h3>Đã thanh toán: ${orderDetails.pay}</h3>
              </div>
+
+             <h2>Payment DetailS</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Postal Code</th>
+                        <th>Country Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{orderDetails.address.recipient_name}</td>
+                        <td>{orderDetails.address.line1 + " - " + orderDetails.address.city}</td>
+                        <td>{orderDetails.address.postal_code}</td>
+                        <td>{orderDetails.address.country_code}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div className="alertship">
+            <img className="alerticon" src={check}></img>
+            <h3>Thanh toán thành công</h3>
+            </div>
+
+
             <h2>Shipping Details</h2>
             <table>
                 <thead>
@@ -202,7 +205,7 @@ function OrderDetails() {
                         return(
                         <div className="alertship ">
                             <img className="alerticon" src={check}></img>
-                            <h3>Done</h3>
+                            <h3>Done : {orderDetails.time}</h3>
                             </div> 
                         )    
                     }

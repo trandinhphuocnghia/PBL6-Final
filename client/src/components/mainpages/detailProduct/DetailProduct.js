@@ -2,15 +2,20 @@ import React, {useContext, useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
-import Zoom from 'react-medium-image-zoom'
+import Slider from "react-slick";
 import 'react-medium-image-zoom/dist/styles.css'
 import heart from '../../../img/heart2.svg'
 import Axios from 'axios'
-
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import left from '../../../img/left.svg'
+import gift from '../../../img/gift.jpg'
+import gift2 from '../../../img/ideas.png'
 function DetailProduct() {
     const params = useParams()
+   
     const state = useContext(GlobalState)
+    const [isAdmin] = state.userAPI.isAdmin
     const [products] = state.productsAPI.products
     const addwishlist = state.userAPI.addWishList
     const addCart = state.userAPI.addCart
@@ -53,23 +58,41 @@ function DetailProduct() {
 			})
 		}
 
-
-		let buttonRight = document.getElementById('slideRight');
-		let buttonLeft = document.getElementById('slideLeft');
-
-		
-
-		
-
-    //
+    //zoom//
 
 
     if(detailProduct.length === 0) return null;
 
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+
     return (
         <>
+       
+                    
+
+        {
+            isAdmin ?
+            <>
+            <div className="fun">
+        <h1 className="step">Product details</h1>
+        <Link  className="fun1" to="/product">
+            <img className="funmini" src={left}/>
+            <p>Return</p></Link>
+        </div>
+            </>
+            :
+            ''
+        }
             <div className="detail">
                 <div className="detailimg">
+                
+                
                  <img className="mainimg" id="featured" src={detailProduct.images[0].url} alt="" width="1000" />
 
                   <div className="slide-wrapper">
@@ -83,10 +106,16 @@ function DetailProduct() {
                     </div> 
                     
                   </div>  
+                
+                
+                    
+                    
+                    
 
+                
                 </div>
                 
-                
+              
                 
                 
                 <div className="box-detail">
@@ -105,6 +134,8 @@ function DetailProduct() {
                     }
                     
                     </div>
+                    {
+                       !isAdmin ? 
                     <div className="pricebtn">
                     <Link  className="cart"
                     onClick={() => addCart(detailProduct)}>
@@ -115,6 +146,9 @@ function DetailProduct() {
                     >   <img className="wsicon" src={heart}/>
                         <p className="ws">Add to wishlist</p></Link>
                     </div>
+                    :
+                    ''
+                    }
                     </div>
                     <div className="descriptionproduct">
                     <p className="title">Description: </p>
@@ -138,14 +172,37 @@ function DetailProduct() {
                 </div>
             </div>
 
+             {   
+             !isAdmin ?    
+            <div className="cmgift">
+                        <p>custom it to your chirsmas gift </p>
+                        <img src={gift}></img>
+             </div>
+             : ''
+            }
+
+             {
+            !isAdmin ?
+        <div className="chirsmast">
+            <img src={gift2}/>
+        </div>
+        :''
+        }
+            
+            { !isAdmin ?
+            <>
+
+
             <div>
-            <div className="Title">
-            <h1 className="titledetail2">
+
+        
+            <h1 className="titledetail2 alone">
                 You might also be interested in...
             </h1>
-            </div>
+            
                 <div className="products">
                     {
+                        
                         products.map(product => {
                             return product.category === detailProduct.category && product._id !== detailProduct._id
                                 ? <ProductItem key={product._id} product={product} /> : null
@@ -157,9 +214,17 @@ function DetailProduct() {
             <div className="phonecall">
             <p>To make an enquiry call <span>+0848071200</span></p>
         </div>
-        
+        </>
+        :
+        ''
+        }
         </>
     )
-}
+
+    //
+    //zoom effect
+     
+
+    }
 
 export default DetailProduct

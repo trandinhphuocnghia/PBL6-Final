@@ -9,6 +9,23 @@
     margin: 20px 0px;
     border-radius: 10px;
 }
+.chirsmast{
+    margin-top: 5px;
+    width: 100%;
+    
+    
+  
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.chirsmast img {
+    width: 950px;
+    height: 30vh;
+    object-fit: cover;
+}
 .mainimg{
     max-width: 700px;
     width: 100%;
@@ -30,6 +47,18 @@
     padding: 10px 30px;
     border-radius: 8px;
 
+}
+.cmgift{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    margin-top: -20px;
+    font-size: 25px;
+    font-style: italic;
+    color: red;
+    font-weight: 600;
 }
 .box-detail .row{
     width: 100%;

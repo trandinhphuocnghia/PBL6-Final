@@ -12,10 +12,6 @@
   src: url(./hk-grotesk/HKGrotesk-MediumLegacy.otf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .App{
   overflow: hidden;
   max-width: 100%;
@@ -148,4 +144,12 @@ button{
   .create_product .upload{
     margin: 20px 0;
   }
+}
+
+.slick-dots li {
+  width: 30px;
+  height: 30px;
+}
+.alone{
+  margin-top: 30px;
 }

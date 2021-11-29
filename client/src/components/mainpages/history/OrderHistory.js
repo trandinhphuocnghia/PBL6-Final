@@ -46,8 +46,30 @@ function OrderHistory() {
             <table>
                 <thead>
                     <tr>
-                        <th>Payment ID</th>
-                        <th>Date of Purchased</th>
+                        { !isAdmin ?
+                        <>
+                        <th>Customer</th>
+                        </>
+                        :
+                        <>
+                        <th>Paypal name</th>
+                        </>
+                        }
+                        <th>ID</th>
+                        <th>Date of Payment</th>
+                        {
+                            isAdmin ?
+                            <>
+                            <th>Reciver</th>
+                            <th>order status</th>
+                            </>
+                            : 
+                            <>
+                            <th>Paid</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            </>
+                        }
                         <th></th>
                     </tr>
                 </thead>
@@ -55,9 +77,31 @@ function OrderHistory() {
                     {
                         history.map(items => (
                             <tr key={items._id}>
+                                {
+                                 !isAdmin ?
+                                 <>   
+                                <td>{items.name}</td>
+                                </>
+                                :
+                                <>   
+                                <td>{items.address.recipient_name}</td>
+                                </>
+                                }
                                 <td>{items.paymentID}</td>
                                 <td>{new Date(items.createdAt).toLocaleDateString()}</td>
-                                <td><Link to={`/history/${items._id}`}>View</Link></td>
+                                { isAdmin ?
+                                <>
+                                <td>{items.shipname}</td>
+                                <td className="colorstt">{items.shippingstatus}</td>
+                                </>
+                                :
+                                <>
+                                <td>${items.pay}</td>
+                                <td>${items.total}</td>
+                                <td>{items.shippingstatus}</td>
+                                </>
+                                }
+                                <td><Link to={`/history/${items._id}`}>Details</Link></td>
                             </tr>
                         ))
                     }

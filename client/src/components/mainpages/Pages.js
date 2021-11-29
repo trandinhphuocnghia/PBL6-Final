@@ -17,6 +17,7 @@ import {GlobalState} from '../../GlobalState'
 import UserManagement from './usermanagement/usermanagement'
 import UploadImg from './createProduct/UploadImg'
 import UpdateImg from './createProduct/UpdateImg'
+import UploadmImg from './createProduct/UploadmImg'
 function Pages() {
     const state = useContext(GlobalState)
     const [isLogged] = state.userAPI.isLogged
@@ -28,7 +29,8 @@ function Pages() {
             <Route path="/" exact component={Home} />
             <Route path="/product" exact component={Products} />
             <Route path="/detail/:id" exact component={DetailProduct} />
-            <Route path="/uploadimg/:id" exact component={UploadImg} />            
+            <Route path="/uploadimg/:id" exact component={UploadImg} />
+            <Route path="/uploadmoreimg/:id" exact component={UploadmImg} />            
             <Route path="/updateimg/:id" exact component={UpdateImg} />
 
             <Route path="/login" exact component={isLogged ? NotFound : Login} />

@@ -19,8 +19,18 @@ function ProductItem({product, isAdmin, deleteProduct, handleCheck}) {
                 onChange={() => handleCheck(product._id)} />
             }
             
+            {
+             product.sold >= 1 ?   
+             <>
+             <img src={product.mainimg.url} alt="" />
+             
+                <p className="alertopacity">Sold out</p>
+            
+            </>
+            :
             <img src={product.mainimg.url} alt="" />
-
+           
+            }
             <div className="product_box">
                 <h2 title={product.title}>{product.title}</h2>
                 <span>${product.price}</span>

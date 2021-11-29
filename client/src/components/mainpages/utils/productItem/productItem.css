@@ -1,12 +1,12 @@
 .product_card{
     max-width: 400px;
     overflow: hidden;
-    height: 500px;
+    height: 550px;
     padding: 15px;
     box-shadow: 0 0 15px #ddd;
     margin: 10px 0;
     position: relative;
-    border-radius: 10px;
+    
     border:0.5px solid rgb(209, 206, 206) ;
     transition: 0.5s;
     background: #fff;
@@ -27,6 +27,7 @@
 
 }
 .product_box h2{
+    margin: 15px 0 0 0;
     width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -36,9 +37,13 @@
     color: #323232;
 }
 .product_card span{
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
     color: crimson;
 }
 .product_box p{
+    margin: 10px 0;
     width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -61,7 +66,7 @@
     color: white;
     font-weight: 600;
     letter-spacing: 2px;
-    padding: 6px;
+    padding: 16px;
 }
 #btn_buy{
     background: crimson;
@@ -87,16 +92,152 @@
 #product_like{
     position: absolute;
     top: 0;
-    left: 87%;
-    background: #fff;
+    left: 83%;
+
     border-bottom-left-radius:8px ;
 }
 #product_like img{
-    width:28px;
-    height: 28px;
+    width:30px;
+    height: 30px;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 7px;
+    margin-top: 20px;
 }
 #product_like:hover{
     background-color: crimson;
+}
+
+.Adminproduct{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 20px 0;
+}
+.product_element{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    
+    background-color: #fff;
+    border-bottom: 0.3px solid rgb(207, 202, 202);
+
+}
+.imgmaina{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px 10px;
+    padding: 10px 0;
+}
+.product_element input{
+    width: 50px;
+    height: 30px;
+}
+
+.inforbox{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.inforbox h2{
+    padding: 0px 0 10px 0;
+    font-weight: 600;
+    color: darkblue;
+    font-size: 25px;
+}
+.inforbox span {
+    padding: 0px 0 10px 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: crimson;
+}
+.inforbtn{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.moreimg{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.mini{
+    width: 30px;
+    height: 20px;
+}
+.btx{
+    margin: 10px 0;
+    width: 50%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: goldenrod;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+.btx p{
+    margin-right: 5px;
+   
+}
+
+.fun{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fun1{
+    height: 35px;
+    background-color: rgb(168, 170, 43);
+    color: #fff;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fun1 p{
+    margin-right: 5px;
+}
+.funmini{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.checkproduct{
+    margin-top: 100px;
+}
+
+.alertopacity{
+
+    position: absolute;
+    color: crimson;
+    font-size: 60px;
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+    background: #fff;
+    margin-top: -180px;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    white-space: nowrap;
+}
+.small{
+    width : 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-top: 5px;
 }
