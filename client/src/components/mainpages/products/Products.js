@@ -26,6 +26,7 @@ function Products() {
 
     const deleteProduct = async(id, public_id) => {
         try {
+            if(window.confirm("Do you want to remove product")){
             setLoading(true)
             const destroyImg = axios.post('/api/destroy', {public_id},{
                 headers: {Authorization: token}
@@ -37,7 +38,7 @@ function Products() {
             await destroyImg
             await deleteProduct
             setCallback(!callback)
-            setLoading(false)
+            setLoading(false)}
         } catch (err) {
             alert(err.response.data.msg)
         }
@@ -59,7 +60,7 @@ function Products() {
 
     if(loading) return <div><Loading /></div>
     return (
-        <>
+        <div>
        {
            isAdmin ?  <h3 className="pagename">Product Management</h3> : ""
        }
@@ -127,7 +128,7 @@ function Products() {
             isAdmin ? "" :  <Footer />
         }
        
-        </>
+        </div>
 
         
 

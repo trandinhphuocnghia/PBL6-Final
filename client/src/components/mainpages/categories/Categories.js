@@ -1,6 +1,10 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import rt from '../../../img/rt.svg'
+import right2 from '../../../img/right2.svg'
+
 
 function Categories() {
     const state = useContext(GlobalState)
@@ -53,6 +57,10 @@ function Categories() {
     }
 
     return (
+        <div className="codo">
+        <Link className="btnreturn1" to="/product">
+        <img src={rt}></img>
+        </Link>
         <div className="categories">
             <form onSubmit={createCategory}>
                 <label htmlFor="category">Category</label>
@@ -76,6 +84,12 @@ function Categories() {
                     ))
                 }
             </div>
+           <Link className="btncreatenew" to="/create_product">
+               <p>Create new product</p>
+               <img src={right2}/>
+               </Link>
+        </div>
+       
         </div>
     )
 }

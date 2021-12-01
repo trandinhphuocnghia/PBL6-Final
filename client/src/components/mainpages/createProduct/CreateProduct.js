@@ -138,10 +138,11 @@ function CreateProduct() {
     }*/
     return (
       
-        <>
+        <div className="containerimg">
+        
         {
         onEdit ? <h1 className="step">Updates your product</h1> :
-        <h1 className="step">Step 1: Informations</h1>
+        <h1 className="step colorh1">Step 1: Informations</h1>
         }
         <div className="create_product">
         
@@ -211,7 +212,7 @@ function CreateProduct() {
                 <button className="btncreate" type="submit">{onEdit? "Update" : "Create"}</button>
             </form>
         </div>
-        </>
+        </div>
     )
 }
 

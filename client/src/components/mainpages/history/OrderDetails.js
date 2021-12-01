@@ -114,7 +114,7 @@ function OrderDetails() {
     return (
         <div className="history-page">
             <h2>Details Product</h2>
-            <table style={{margin: "30px 0px 30px 10px"}}>
+            <table class="styled-table styled-table1" style={{margin: "30px 0px 30px 10px"}}>
                 <thead>
                     <tr>
                         <th></th>
@@ -143,7 +143,7 @@ function OrderDetails() {
              </div>
 
              <h2>Payment DetailS</h2>
-            <table>
+            <table class="styled-table styled-table1">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -168,7 +168,7 @@ function OrderDetails() {
 
 
             <h2>Shipping Details</h2>
-            <table>
+            <table class="styled-table styled-table1">
                 <thead>
                     <tr>
                         <th>Reciver</th>
@@ -205,7 +205,7 @@ function OrderDetails() {
                         return(
                         <div className="alertship ">
                             <img className="alerticon" src={check}></img>
-                            <h3>Done : {orderDetails.time}</h3>
+                            <h3>Hoàn tất đơn hàng : {orderDetails.time}</h3>
                             </div> 
                         )    
                     }

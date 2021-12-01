@@ -2,6 +2,8 @@ import React, {useContext, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import logomain from '../../../img/logo.png'
+import namew from '../../../img/namew.png'
 
 function OrderHistory() {
     const state = useContext(GlobalState)
@@ -29,6 +31,13 @@ function OrderHistory() {
         }
     },[token, isAdmin, setHistory])
 
+    const mystyle = {
+        color : "#263575",
+        fontWeight: "600",
+        fontStyle: "italic",   
+    }
+
+
     return (
         <div className="history-page">
             {
@@ -43,7 +52,7 @@ function OrderHistory() {
             <h4>You have {history.length} payment bill</h4>
             </>
             }
-            <table>
+            <table class="styled-table">
                 <thead>
                     <tr>
                         { !isAdmin ?
@@ -52,10 +61,10 @@ function OrderHistory() {
                         </>
                         :
                         <>
-                        <th>Paypal name</th>
+                        <th>Username</th>
                         </>
                         }
-                        <th>ID</th>
+                        <th>Payment ID</th>
                         <th>Date of Payment</th>
                         {
                             isAdmin ?
@@ -84,7 +93,7 @@ function OrderHistory() {
                                 </>
                                 :
                                 <>   
-                                <td>{items.address.recipient_name}</td>
+                                <td>{items.name}</td>
                                 </>
                                 }
                                 <td>{items.paymentID}</td>
@@ -92,13 +101,17 @@ function OrderHistory() {
                                 { isAdmin ?
                                 <>
                                 <td>{items.shipname}</td>
-                                <td className="colorstt">{items.shippingstatus}</td>
+                                <td style={
+                                mystyle
+                                }>{items.shippingstatus}</td>
                                 </>
                                 :
                                 <>
                                 <td>${items.pay}</td>
                                 <td>${items.total}</td>
-                                <td>{items.shippingstatus}</td>
+                                <td style={
+                                  mystyle
+                                }>{items.shippingstatus}</td>
                                 </>
                                 }
                                 <td><Link to={`/history/${items._id}`}>Details</Link></td>
@@ -107,6 +120,11 @@ function OrderHistory() {
                     }
                 </tbody>
             </table>
+
+            <div className="ctnlogo">
+                    <img src={logomain}/>
+                    <img src={namew}/>
+            </div>
         </div>
     )
 }

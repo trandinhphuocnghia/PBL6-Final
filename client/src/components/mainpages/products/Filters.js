@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
+import searchic from '../../../img/search.svg'
 
 function Filters() {
     const state = useContext(GlobalState)
@@ -31,8 +32,10 @@ function Filters() {
                 </select>
             </div>
 
-            <input type="text" value={search} placeholder="Enter your search!"
+            <input  className="inputsearch" type="text" value={search} placeholder="Enter your search!"
             onChange={e => setSearch(e.target.value.toLowerCase())} />
+            
+            <img className="searchicft" src={searchic}/>
 
             <div className="row sort">
                 <span>Sort By: </span>
