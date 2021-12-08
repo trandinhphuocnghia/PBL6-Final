@@ -54,7 +54,7 @@ function UserAPI(token) {
               });
         }
         else{
-        if(product.sold === 0 ){ 
+        
 
         const check = cart.every(item =>{
             return item._id !== product._id
@@ -97,23 +97,8 @@ function UserAPI(token) {
                 
               });
         }
-    }
-    else{
-      store.addNotification({
-        title: "Out of stock!!",
-        message: "So sorry, this product was sold out!!",
-        type: "danger",
-        insert: "top",
-        container: "top-center",
-        animationIn: ["animate__animated", "animate__fadeIn"],
-        animationOut: ["animate__animated", "animate__fadeOut"],
-        dismiss: {
-          duration: 2500,
-          onScreen: true
-        },
-        
-      });
-    }
+    
+   
     }
 
     }
@@ -139,7 +124,7 @@ function UserAPI(token) {
         const check = wishlist.every(item =>{
             return item._id !== product._id
         })
-
+        
         if(check){
             setWishlist([...wishlist, {...product, quantity: 1}])
 

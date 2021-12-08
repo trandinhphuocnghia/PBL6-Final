@@ -12,20 +12,18 @@ function ProductsAPI() {
     const [search, setSearch] = useState('')
     const [page, setPage] = useState(1)
     const [result, setResult] = useState(0)
+      
+    const getProducts = async () => {
+
+        const res = await axios.get(`/api/products?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
+        setProducts(res.data.products)
+        setResult(res.data.result)
+        
+    }
     
     useEffect(() =>{
-        
-        const getProducts = async () => {
-            const res = await axios.get(`/api/products?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
-            setProducts(res.data.products)
-            setResult(res.data.result)
-            
-        }
-        
-      
         getProducts()
-        
-        
+         
     },[callback, category, sort, search, page])
 
 
@@ -38,6 +36,7 @@ function ProductsAPI() {
         search: [search, setSearch],
         page: [page, setPage],
         result: [result, setResult],
+        getProducts
         
     }
 }

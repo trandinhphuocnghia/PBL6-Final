@@ -108,6 +108,7 @@ function Cart() {
                             <p>{product.description}</p>
                             <p>{product.content}</p>
 
+                        
                             <Link id="btn_view_cart" to={`/detail/${product._id}`}>
                                 -For more detail-
                                </Link>

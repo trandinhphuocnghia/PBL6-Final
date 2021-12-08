@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import ProductItem from '../utils/productItem/ProductItem'
 import Loading from '../utils/loading/Loading'
@@ -16,6 +16,7 @@ function Products() {
     const [callback, setCallback] = state.productsAPI.callback
     const [loading, setLoading] = useState(false)
     const [isCheck, setIsCheck] = useState(false)
+    const { getProducts } = state.productsAPI
 
     const handleCheck = (id) =>{
         products.forEach(product => {
@@ -57,6 +58,10 @@ function Products() {
             if(product.checked) deleteProduct(product._id, product.mainimg.public_id)
         })
     }
+
+    useEffect(() => {
+        getProducts()
+    },[])
 
     if(loading) return <div><Loading /></div>
     return (

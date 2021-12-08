@@ -20,43 +20,34 @@ function DetailProduct() {
     const addwishlist = state.userAPI.addWishList
     const addCart = state.userAPI.addCart
     const [detailProduct, setDetailProduct] = useState([])
+    const [carouselImage,setCarouselImage] = useState()
     const [image,setImage] = useState([])
+    const { getProducts } = state.productsAPI
     useEffect(() =>{
         if(params.id){
 
             products.forEach(product => {
-                if(product._id === params.id) setDetailProduct(product)
+                if(product._id === params.id) {
+                    setDetailProduct(product) 
+                    setCarouselImage(product.images[0])
+                }
             })
             const getimage = async () => {
                 const res = await Axios.get(`/api/getimg/${params.id}`)
-               
                 setImage(res.data.data)
             }
             getimage()
         }
+        
        
     },[params.id, products])
+    
 
     //console.log(image)
     //
-    let thumbnails = document.getElementsByClassName('thumbnail')
-
-		let activeImages = document.getElementsByClassName('active')
-
-		for (var i=0; i < thumbnails.length; i++){
-
-			thumbnails[i].addEventListener('click', function(){
-				console.log(activeImages)
-				
-				if (activeImages.length > 0){
-					activeImages[0].classList.remove('active')
-				}
-				
-
-				this.classList.add('active')
-				document.getElementById('featured').src = this.src
-			})
-		}
+    useEffect(() => {
+        getProducts()
+    },[])
 
     //zoom//
 
@@ -90,17 +81,17 @@ function DetailProduct() {
             ''
         }
             <div className="detail">
-                <div className="detailimg">
+               { !carouselImage.url ? "error" : <div className="detailimg">
                 
                 
-                 <img className="mainimg" id="featured" src={detailProduct.images[0].url} alt="" width="1000" />
+                 <img className="mainimg" id="featured" src={carouselImage.url} alt="" width="1000" />
 
                   <div className="slide-wrapper">
                  
                     <div className="slider">
                       {
-                          image.map(image => (
-                            <img className="thumbnail" src={image.url} alt="" width="1000" />
+                          image.map((image,index) => (
+                            <img key={index} onClick={() => setCarouselImage(image)} className="thumbnail" src={image.url} alt="" width="1000" />
                           ))
                       }
                     </div> 
@@ -113,7 +104,7 @@ function DetailProduct() {
                     
 
                 
-                </div>
+                </div>}
                 
               
                 

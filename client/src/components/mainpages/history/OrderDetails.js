@@ -235,8 +235,8 @@ function OrderDetails() {
             <div className="shipsttdata"> 
              <h4>Xác nhận giao hàng</h4>      
             <div className="submitbtn">
-            {   orderDetails.shippingstatus === "Waiting" ?   
-            <button className="shipbtn" onClick={changeshipstt}>confirm</button>
+            {   orderDetails.shippingstatus === "Xác nhận giao hàng" || orderDetails.shippingstatus === "Đã xuất kho"  ?  <img className='shipbtnic' src={done}></img> : orderDetails.shippingstatus === "Waiting" ?
+            <button className="shipbtn" onClick={changeshipstt}>confirm</button> 
             : 
                ''
                 }
@@ -245,7 +245,7 @@ function OrderDetails() {
             <div className="shipsttdata">
             <h4>Xác nhận xuất kho</h4>   
             <div className="submitbtn">
-             {   orderDetails.shippingstatus === "Xác nhận giao hàng" ?
+             {   orderDetails.shippingstatus === "Đã xuất kho" ?  <img className='shipbtnic' src={done}></img> : orderDetails.shippingstatus === "Xác nhận giao hàng" ?
             <button className="shipbtn" onClick={changeshipstt}>Confirm</button>
             : ''
              }

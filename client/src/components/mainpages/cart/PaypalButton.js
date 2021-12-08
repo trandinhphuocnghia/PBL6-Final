@@ -46,6 +46,8 @@ export default class PaypalButton extends React.Component {
             total={total} onError={onError} 
             onSuccess={onSuccess} onCancel={onCancel}
             style={style} />
+
+           
         );
     }
 }
