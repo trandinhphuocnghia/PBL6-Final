@@ -31,6 +31,7 @@
     cursor: pointer;
 }
 .total{
+    
     width: 100%;
     height: 50px;
     display: flex;
@@ -38,16 +39,20 @@
     justify-content: space-between;
     animation: taadaa 2.5s both;
     margin-bottom: 40px ;
+   padding-right: 135px;
+   padding-left: 135px;
+
 }
 
 .total h3{
     color: crimson;
     background-color: #fff;
-    width: 150px;
-    height: 30px;
+    
+   
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    font-size: 36px;
     align-items: center;
 }
 .select{
@@ -60,7 +65,8 @@
 }
 #btn_select{
     background-color: darkgoldenrod;
-    width: 200px;
+    width: 50%;
+    margin-right:20px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -70,7 +76,8 @@
 }
 #btn_checkout{
     background-color: crimson;
-    width: 100px;
+    width: 50%;
+   
     height: 50px;
     display: flex;
     justify-content: center;
@@ -116,8 +123,7 @@
 
 .tablecontainer{
     width: 90%;
-    height: 500px;
-    overflow-y: scroll;
+   
     display: flex;
     justify-content: center;
     align-items: center;

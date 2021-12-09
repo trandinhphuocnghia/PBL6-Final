@@ -104,8 +104,6 @@ function Cart() {
                          <th>Product</th>   
                          <th>Name</th>
                          <th>Price</th>
-
-                         <th>Details</th>
                          <th>Quantities</th>
                          <th></th>
                      </tr>
@@ -118,14 +116,13 @@ function Cart() {
                        <th> <img className="desimgcart" src={product.images[0].url} alt="" /></th>
 
 
-                            <th className="descriptioncart">{product.title}</th>
-                            <th>$ {product.price * product.quantity}</th>
-                            
-                            <th>                        
+                            <th className="descriptioncart">
                             <Link id="btn_view_cart" to={`/detail/${product._id}`}>
-                                -For more detail-
-                               </Link>
-                            </th>
+                                {product.title}
+                                </Link>  
+                                </th>
+                            <th>$ {product.price * product.quantity}</th>
+                        
                             <th>
                             <div className="amount">
                                 <button className="amountbtn" onClick={() => decrement(product._id)}> - </button>

@@ -189,7 +189,7 @@ function CreateProduct() {
                 <div className="row specifi">
                     <label htmlFor="content">Specifications</label>
     
-                    <input type="text" name="dimensions" id="dimensions" required value={product.dimensions} onChange={handleChangeInput} placeholder="dimensions"></input>
+                    <input type="text" name="dimensions" id="dimensions" required value={product.dimensions} onChange={handleChangeInput} placeholder="Số mảnh ghép"></input>
                     <input type="text" name="period" id="period" required value={product.period} onChange={handleChangeInput} placeholder="period"></input>
                     <input type="text" name="material" id="material" required value={product.material} onChange={handleChangeInput} placeholder="material"></input>
                     <input type="text" name="condition" id="condition" required value={product.condition} onChange={handleChangeInput} placeholder="condition"></input>

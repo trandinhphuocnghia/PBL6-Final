@@ -22,7 +22,7 @@ function ProductItem2({product, isAdmin, deleteProduct, handleCheck}){
             <h2 title={product.title}>{product.title}</h2>
             <span>${product.price}</span>
             <p>{product.description}</p>
-            <Link to={`/detail/${product._id}`}>Check Detail</Link>
+           
             
             </div>
 
