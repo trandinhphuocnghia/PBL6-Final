@@ -20,11 +20,11 @@ function UserAPI(token) {
                     setIsLogged(true)
                     res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
 
-                    setCart(res.data.cart)
+                   setCart(res.data.cart)
                     setWishlist(res.data.wishlist)
 
                 } catch (err) {
-                    alert(err.response.data.msg)
+                   // alert(err.response.data.msg)
                 }
             }
 

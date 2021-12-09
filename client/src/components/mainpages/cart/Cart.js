@@ -2,9 +2,8 @@ import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import PaypalButton from './PaypalButton'
-import exit from '../../../img/x.svg'
-import  { Redirect } from 'react-router-dom'
+import exit from '../../../img/multi.svg'
+
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -94,34 +93,58 @@ function Cart() {
         return <h2 style={{textAlign: "center", fontSize: "5rem"}}>Cart Empty</h2> 
 
     return (
-        <div>
+        <div className="Cartcontainer">
+
+
              <h3 className="pagename">Your Cart</h3>
-            {
+             <div className="tablecontainer">
+             <table className="tablecart">
+                 <thead>
+                     <tr>
+                         <th>Product</th>   
+                         <th>Name</th>
+                         <th>Price</th>
+
+                         <th>Details</th>
+                         <th>Quantities</th>
+                         <th></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+
+             {
                 cart.map(product => (
-                    <div className="detail cart" key={product._id}>
-                        <img className="desimgcart" src={product.images[0].url} alt="" />
+                    <tr key={product._id}>
+                       <th> <img className="desimgcart" src={product.images[0].url} alt="" /></th>
 
-                        <div className="box-detail">
-                            <h2>{product.title}</h2>
 
-                            <h3>$ {product.price * product.quantity}</h3>
-                            <p>{product.description}</p>
-                            <p>{product.content}</p>
-
-                        
+                            <th className="descriptioncart">{product.title}</th>
+                            <th>$ {product.price * product.quantity}</th>
+                            
+                            <th>                        
                             <Link id="btn_view_cart" to={`/detail/${product._id}`}>
                                 -For more detail-
                                </Link>
-                            
-                            <div className="delete" 
-                            onClick={() => removeProduct(product._id)}>
-                                <img className='exit' src={exit}></img>
+                            </th>
+                            <th>
+                            <div className="amount">
+                                <button className="amountbtn" onClick={() => decrement(product._id)}> - </button>
+                                <span>{product.quantity}</span>
+                                <button className="amountbtn" onClick={() => increment(product._id)}> + </button>
                             </div>
-                        </div>
-                    </div>
+                            </th>
+                            <th>
+                                <img 
+                                onClick={() => removeProduct(product._id)}
+                                className="removeimg" src={exit} alt="Remove"/>
+                            </th>
+                    </tr>
                 ))
             }
-
+            </tbody>
+            </table>
+            </div>
+           
             <div className="total">
                 <h3>Total: $ {total}</h3>
                 <div className="select">

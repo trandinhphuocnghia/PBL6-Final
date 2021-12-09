@@ -20,14 +20,7 @@ function ProductItem({product, isAdmin, deleteProduct, handleCheck}) {
             }
             
             {
-             product.sold >= 1 ?   
-             <>
-             <img src={product.mainimg.url} alt="" />
-             
-                <p className="alertopacity">Sold out</p>
-            
-            </>
-            :
+
             <img src={product.mainimg.url} alt="" />
            
             }

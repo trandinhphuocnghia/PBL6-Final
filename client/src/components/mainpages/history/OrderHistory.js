@@ -121,10 +121,6 @@ function OrderHistory() {
                 </tbody>
             </table>
 
-            <div className="ctnlogo">
-                    <img src={logomain}/>
-                    <img src={namew}/>
-            </div>
         </div>
     )
 }

@@ -1,8 +1,17 @@
+.Cartcontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .cart{
     position: relative;
     border: 1px solid #ccc;
     transform: scaleY(0.98);
-    animation: fadeInBottom 2s both;
+    animation: taadaa 2s both;
 }
 .amount span{
     color: crimson;
@@ -27,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    animation: fadeInBottom 2.5s both;
+    animation: taadaa 2.5s both;
     margin-bottom: 40px ;
 }
 
@@ -69,10 +78,7 @@
     border-radius: 8px;
     color: #fff;
 }
-.desimgcart{
-    max-width: 600px;
-    height: 450px;
-}
+
 .exit{
     width: 30px;
     height: 30px;
@@ -90,3 +96,67 @@
     font-weight: 700;
     color: rgb(7, 128, 165);
 }
+
+
+/*cart table*/
+.tablecart{
+    width: 95%;
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: sans-serif;
+    margin: auto;
+    
+    
+}
+
+.tablecart thead tr{
+    background-color: #009879;
+    color: #ffffff;
+}
+
+.tablecontainer{
+    width: 90%;
+    height: 500px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.desimgcart{
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.removeimg{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.removeimg:hover{
+    opacity: 1;
+}
+
+.amountbtn{
+    border-radius: 50%;
+}
+
+@keyframes taadaa { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .descriptioncart{
+      width: 400px;
+  }
