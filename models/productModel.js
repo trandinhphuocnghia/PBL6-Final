@@ -30,7 +30,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    period:{
+    origin:{
     type:String,
     required: true
     },
@@ -38,7 +38,7 @@ const productSchema = new mongoose.Schema({
     type:String,
     required: true
     },
-    condition:{
+    age:{
     type:String,
     required: true
     },

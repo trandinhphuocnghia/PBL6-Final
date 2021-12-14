@@ -63,7 +63,7 @@ const productCtrl = {
     },
     createProduct: async(req, res) =>{
         try {
-            const {product_id, title, price, description,dimensions,period,material,condition, category,mainimg} = req.body;
+            const {product_id, title, price, description,dimensions,origin,material,age, category,mainimg} = req.body;
          if(!mainimg) return res.status(400).json({msg: "No image upload"})
 
             const product = await Products.findOne({product_id})
@@ -71,7 +71,7 @@ const productCtrl = {
                 return res.status(400).json({msg: "This product already exists."})
 
             const newProduct = new Products({
-                product_id,mainimg,title: title.toLowerCase(), price, description,dimensions,period,material,condition, category
+                product_id,mainimg,title: title.toLowerCase(), price, description,dimensions,origin,material,age, category
             })
 
             await newProduct.save()
@@ -100,6 +100,16 @@ const productCtrl = {
 
             res.json({msg: "Updated a Product"})
         } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    getlastid: async(req,res)=>{
+        try{
+
+          const product = await Products.findOne().sort({field:'asc',_id:-1}).limit(1)
+          res.json({lastid:product.product_id})
+            
+        }catch(err){
             return res.status(500).json({msg: err.message})
         }
     }

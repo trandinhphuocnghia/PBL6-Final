@@ -2,7 +2,7 @@ const Users = require('../models/userModel')
 const Payments = require('../models/paymentModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-
+const nodemailer =require('nodemailer')
 const userCtrl = {
     register: async (req, res) =>{
         try {
@@ -23,6 +23,9 @@ const userCtrl = {
             // Save mongodb
             await newUser.save()
 
+            //send email 
+            await sendmail(email)
+            //
             // Then create jsonwebtoken to authentication
             const accesstoken = createAccessToken({id: newUser._id})
             const refreshtoken = createRefreshToken({id: newUser._id})
@@ -161,6 +164,53 @@ const createAccessToken = (user) =>{
 const createRefreshToken = (user) =>{
     return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '7d'})
 }
+
+const sendmail = async (email) => {
+    try{
+    var transporter =  nodemailer.createTransport({ // config mail server
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: 'nbj19712@gmail.com', //Tài khoản gmail vừa tạo
+            pass: 'nghia7122000' //Mật khẩu tài khoản gmail vừa tạo
+        },
+        tls: {
+            // do not fail on invalid certs
+            rejectUnauthorized: false
+        }
+    });
+
+    var content = '';
+    content += `
+    <div
+    style="text-align : center;border : 30px solid teal;display: flex;justify-content: center; align-self: center;flex-direction: column;">
+    <h1 style="font-size: 70px;color : teal;">Thanks for register !!!</h1>
+    <img src="https://raw.githubusercontent.com/Quanghuy180800/frontend_PBL6/master/images/logo_GIOCATTOLI.png" />
+    </div>
+    `;
+    var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
+        from: 'NQH-Test nodemailer',
+        to: email,
+        subject: 'Test Nodemailer',
+        text: 'Your text is here',//Thường thi mình không dùng cái này thay vào đó mình sử dụng html để dễ edit hơn
+        html: content //Nội dung html mình đã tạo trên kia :))
+    }
+    transporter.sendMail(mainOptions, function(err, info){
+        if (err) {
+            console.log(err);
+            req.flash('mess', 'Lỗi gửi mail: '+err); //Gửi thông báo đến người dùng
+            res.redirect('/');
+        } else {
+            console.log('Message sent: ' +  info.response);
+            req.flash('mess', 'Một email đã được gửi đến tài khoản của bạn'); //Gửi thông báo đến người dùng
+            res.redirect('/');
+        }
+    });
+}catch(err){
+
+}}
+
 
 module.exports = userCtrl
 

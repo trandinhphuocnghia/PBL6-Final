@@ -6,6 +6,7 @@ import Cart from './icon/cart.svg'
 import Heart from '../../img/heart.svg'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import imglogo from '../../img/logoheader.png'
 
 function Header() {
     const state = useContext(GlobalState)
@@ -54,10 +55,9 @@ function Header() {
             </div>
 
             <div className="logo">
-                
-                <h1>
-                    <Link className="webname" to="/">{isAdmin ? 'Antique' : 'Antique'}</Link>
-                </h1>
+            <Link to="/">   
+            <img src={imglogo} alt=""></img>
+            </Link>
             </div>
 
             <ul style={styleMenu}>

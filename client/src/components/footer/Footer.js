@@ -7,7 +7,7 @@ function Footer(){
 
 			<div className="footer-left">
 
-				<h3><span>Antique</span></h3>
+				<h3><span>GIOCATTOLI</span></h3>
 
 				<p className="footer-links">
 					Thank you for your visited.
@@ -17,19 +17,16 @@ function Footer(){
 			</div>
 
 			<div className="footer-center">
-
+				<h3><span>ADDRESS</span></h3>
 				<div>
-					<i className="fa fa-map-marker"></i>
-					<p><span>K82/63 Nguyen Luong Bang</span> Hoa Khanh Bac , Lien Chieu, Da Nang.</p>
+					<p>K82/63 Nguyen Luong Bang, Hoa Khanh Bac , Lien Chieu, Da Nang.</p>
 				</div>
 
 				<div>
-					<i className="fa fa-phone"></i>
 					<p>0848071200</p>
 				</div>
 
 				<div>
-					<i className="fa fa-envelope"></i>
 					<p><a href="mailto:phuocnghiaqs7@gmail.com">phuocnghiaqs7@gmail.com</a></p>
 				</div>
 
@@ -42,8 +39,8 @@ function Footer(){
 					This project was created to find all special things.<br/>
                     My crews:<br/>
                     Tran Dinh Phuoc Nghia.<br/>
-                    Le Huu Long.<br/>
-                    Phan Quang Hai Bang.<br/>
+                   	Nguyen Le Tuan Cuong.<br/>
+                    Dang Quang Huy.<br/>
 				</p>
 
 				<div className="footer-icons">

@@ -91,11 +91,15 @@ function Homes() {
     }
 
     var settings = {
-        dots: true,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2500,
+        autoplaySpeed: 1500,
+        arrows: true,
         infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 2,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
   
@@ -113,13 +117,9 @@ function Homes() {
                <div className="Intro">
                    <h1>Who are we?</h1>
                   
-                   <p>Antique!! Được thành lập năm 2020,
-                       với mục đích mang lại những sản phẩm có tuổi đời cao, 
-                       nhưng chất lượng cũng như hiệu quả sử dụng vẫn còn.
-                       Hiện nay, sản lượng sản phẩm chưa đa dạng, chúng tôi không ngừng tìm kiếm,
-                       để mang lại những sản phẩm độc lạ cho các bạn.
+                   <p>Giocattoli - cửa hàng chuyên cung cấp đồ chơi Lego cho trẻ nhỏ. Bao gồm những sản phẩm được làm từ nhựa cao cấp ABS, không gây hại cho trẻ nhỏ.
                    </p>
-                   <h3>WELLCOME to our website!</h3>
+                   <h3>WELCOME to our website!</h3>
                </div>
            </div> 
             <div className="Img">
@@ -129,7 +129,7 @@ function Homes() {
 
         <div className="Title">
             <h1 className="titledetail">
-                <p>Some new products</p>
+                Some new products
             </h1>
         </div>
 

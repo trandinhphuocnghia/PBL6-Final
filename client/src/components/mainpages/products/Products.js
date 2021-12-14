@@ -75,8 +75,7 @@ function Products() {
               <div className="opacity"></div> 
               <div className="introproduct">
                   <h1>Wellcome to my product</h1>
-                  <p>Đây là những sản phẩm được chúng tôi tìm được trên các diễn đàn, 
-                    và những làng nghề lâu năm, hay tại những bảo tàng, các buổi triển lãm.</p>
+                  <p>Đồ  chơi lego giúp rèn luyện tính kiên trì làm cho trẻ tránh xa màn hình tivi và điện thoại, kích thích trí não trẻ em tăng khả năng sáng tạo tư duy thông minh hơn.</p>
               </div>
            </div>
        }

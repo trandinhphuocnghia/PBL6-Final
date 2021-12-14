@@ -13,6 +13,7 @@ router.route('/products/:id')
     .delete(auth, authAdmin, productCtrl.deleteProduct)
     .put(auth, authAdmin, productCtrl.updateProduct)
 
-
+router.route('/products/lastid')
+    .get(productCtrl.getlastid)
 
 module.exports = router

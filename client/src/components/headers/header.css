@@ -1,21 +1,31 @@
+
+
 header{
-    min-height: 70px;
-    width: 100%;
+    position: fixed;
+    height: 110px;
+    width: 100vw;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-    background-color: RGB(127, 205, 205);
-    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: teal;
+    margin-left: -20px;
+    padding-right: 20px;
+    z-index: 10;
 }
 header .logo{
     flex: 1;
+  
+}
+header .logo img{
+  height: 110px;
+  width: auto;
 }
 header a{
-    text-transform: uppercase;
-    color: #fff;
+    color: #000;
+    text-transform: uppercase;;
 }
 header ul li{
     display: inline-block;

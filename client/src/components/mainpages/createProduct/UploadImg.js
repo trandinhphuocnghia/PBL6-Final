@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import { GlobalState } from '../../../GlobalState'
 import axios from 'axios'
 import Loading from '../utils/loading/Loading'
-import { useHistory, useParams } from 'react-router'
+import { useHistory, useLocation, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import warning from '../../../img/warning.svg'
 import checkic from '../../../img/check.svg'
@@ -14,7 +14,7 @@ function UploadImg() {
     
     const [token] = state.token
     const [loading, setLoading] = useState(false)
-
+    const { search } = useLocation()
     const params = useParams()
     const history = useHistory()
     const [check,setCheck] = useState(false)

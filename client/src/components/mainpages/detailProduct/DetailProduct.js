@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import left from '../../../img/left.svg'
 import gift from '../../../img/gift.jpg'
 import gift2 from '../../../img/ideas.png'
+import Footer from '../../footer/Footer';
 function DetailProduct() {
     const params = useParams()
    
@@ -120,7 +121,7 @@ function DetailProduct() {
                        detailProduct.sold === 0 ? 
                     <p>Sold: {detailProduct.sold}</p>
                     :   <p>
-                            Out of stock
+                        Sold: {detailProduct.sold}
                         </p>
                     }
                     
@@ -163,22 +164,6 @@ function DetailProduct() {
                 </div>
             </div>
 
-             {   
-             !isAdmin ?    
-            <div className="cmgift">
-                        <p>custom it to your chirsmas gift </p>
-                        <img src={gift}></img>
-             </div>
-             : ''
-            }
-
-             {
-            !isAdmin ?
-        <div className="chirsmast">
-            <img src={gift2}/>
-        </div>
-        :''
-        }
             
             { !isAdmin ?
             <>
@@ -209,13 +194,14 @@ function DetailProduct() {
         :
         ''
         }
+        <Footer/>
         </>
     )
 
     //
     //zoom effect
      
-
+        
     }
 
 export default DetailProduct

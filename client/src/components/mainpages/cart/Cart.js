@@ -3,6 +3,7 @@ import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import exit from '../../../img/multi.svg'
+import Footer from '../../footer/Footer'
 
 
 function Cart() {
@@ -153,6 +154,7 @@ function Cart() {
                  </Link>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

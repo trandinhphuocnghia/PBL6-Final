@@ -9,9 +9,11 @@ const bodyParser = require('body-parser');
 const upload = require('./multer')
 const cloudinary = require('./cloudinary')
 //const http = require('http')
-
-
 const app = express()
+app.use('/static', express.static(path.join(__dirname, 'assets')))
+
+
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors())

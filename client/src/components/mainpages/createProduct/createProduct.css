@@ -139,6 +139,7 @@
     margin: 20px 0;
     font-style: italic;
     font-weight: 600;
+    margin-top: 120px;
 }
 .alertcontainer{
     width: 100%;
@@ -189,4 +190,27 @@
     margin-left: 15px;
     width: 50px;
     height: 40px;
+}
+
+.containter { 
+    display:  flex;
+}
+
+.uploadContainer {
+    min-width: 40%;
+}
+
+.more-mage-container {
+    margin-top: 100px;
+    width: 1050px;
+    height : 650px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.more-image-image {
+    border : 1px solid black;
+    object-fit: cover;
+    margin : 20px
 }

@@ -1,25 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 .products{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     justify-items: center;
     margin: 50px 0;
     grid-row-gap: 25px;
 }
 .hero-image {
+    margin-top: 130px;
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-color: #3fb2f5;
-    background-image: linear-gradient(160deg, #6dc6fa 0%, #80D0C7 100%); 
+    background-color: #f2f2f2;
+   
     /* Set a specific height */
     height: 80vh;
     width: 100%;
     /* Position and center the image to scale nicely on all screens */
     position: relative;
-    margin: 50px 0px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .mproducts{
@@ -34,7 +36,9 @@
       font-size: 20px;
       transition: 0.5s;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  }
+  .mproducts p{
+      padding-left: 10px ;
   }
 
   .mproducts:hover{
@@ -43,7 +47,8 @@
   }
 .phonecall{
     margin-top: 50px;
-    width:100%;
+    margin-left: -20px;
+    width:100vw;
     height: 10vh;
     background-color: #740941;
     color: #fff;
@@ -64,7 +69,8 @@
     margin: 50px 0px;
   }
   .titledetail{
-      color: #fff;
+      font-size: 46px;
+      color: #282828;
       text-shadow: rgb(68, 68, 67) 1px 0 10px;
   }
   .titledetail2{
@@ -102,23 +108,26 @@
      animation-fill-mode: both;
  }
  .Intro{
+     font-family: 'Poppins',sans-serif;
      width: 80%;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     color: cornsilk;
+     color: #000000;
      animation-name: fadeInBottom;
      animation-duration: 2.5s;
      animation-fill-mode: both;
  }
  .Intro h1{
+     color: #ff6347;
      font-size: 50px;
      margin: 20px 0;
      font-style: italic;
  }
  .Intro p{
-     font-size: 25px;
+    font-family: 'Poppins',sans-serif;
+     font-size: 22px;
      text-align: center;
      margin-bottom: 20px;
  }
@@ -252,7 +261,7 @@
 
 .banner{
     position: relative;
-    margin: 20px 0;
+    margin-top: 130px;
     width: 100%;
     height: 70vh;
     background-image: url('../../../img/bannerproduct2.jpg');
@@ -268,12 +277,10 @@
     width: 100%;
     opacity: 0.5;
     height: 70vh;
-    z-index: 10;
     background-color: rgb(24, 23, 23);
 }
 .introproduct{
     position: absolute;
-    z-index: 10000;
     display: flex;
     flex-direction: column;
     justify-content: center;
