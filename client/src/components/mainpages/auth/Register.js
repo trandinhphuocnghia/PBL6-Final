@@ -39,8 +39,8 @@ function Register() {
 
     return (
         <div className="register">
-        <div className="login-page position">
-            <form onSubmit={registerSubmit}>
+        <div className="login-page reheight position">
+            <form className="resizeform" onSubmit={registerSubmit}>
             
                 <h2>Register</h2>
                 {err && ShowErrMsg(err)}
@@ -59,7 +59,8 @@ function Register() {
                 
                 <div className="row">
                     <button type="submit">Register</button>
-                    <Link to="/login">Login</Link>
+                   <div className="qs"><p>You have an account?</p><Link to="/login">Login now</Link></div>
+                    
                 </div>
             </form>
         </div>

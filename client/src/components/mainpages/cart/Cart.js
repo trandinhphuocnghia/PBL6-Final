@@ -114,7 +114,7 @@ function Cart() {
              {
                 cart.map(product => (
                     <tr key={product._id}>
-                       <th> <img className="desimgcart" src={product.images[0].url} alt="" /></th>
+                       <th> <img className="desimgcart" src={product.mainimg.url} alt="" /></th>
 
 
                             <th className="descriptioncart">

@@ -8,6 +8,7 @@ const path = require('path')
 const bodyParser = require('body-parser');
 const upload = require('./multer')
 const cloudinary = require('./cloudinary')
+
 //const http = require('http')
 const app = express()
 app.use('/static', express.static(path.join(__dirname, 'assets')))
@@ -32,6 +33,14 @@ app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/productRouter'))
 app.use('/api', require('./routes/paymentRouter'))
 
+//config webview
+const engines = require("consolidate");
+app.engine("ejs", engines.ejs);
+app.set("views", "./views");
+app.set("view engine", "ejs");
+app.use('/',(req,res)=>{
+    res.render("index")
+})
   
 
 

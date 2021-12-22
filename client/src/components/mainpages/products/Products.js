@@ -75,7 +75,7 @@ function Products() {
               <div className="opacity"></div> 
               <div className="introproduct">
                   <h1>Wellcome to my product</h1>
-                  <p>Đồ  chơi lego giúp rèn luyện tính kiên trì làm cho trẻ tránh xa màn hình tivi và điện thoại, kích thích trí não trẻ em tăng khả năng sáng tạo tư duy thông minh hơn.</p>
+                  
               </div>
            </div>
        }
@@ -104,7 +104,7 @@ function Products() {
                         isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
                    
                 })
-            } 
+        } 
         </div>
         :
         <div className="Adminproduct">

@@ -12,27 +12,44 @@ import left from '../../../img/left.svg'
 import gift from '../../../img/gift.jpg'
 import gift2 from '../../../img/ideas.png'
 import Footer from '../../footer/Footer';
+
 function DetailProduct() {
     const params = useParams()
    
     const state = useContext(GlobalState)
     const [isAdmin] = state.userAPI.isAdmin
     const [products] = state.productsAPI.products
+    const [list] = state.productsAPI.listsearch
     const addwishlist = state.userAPI.addWishList
     const addCart = state.userAPI.addCart
     const [detailProduct, setDetailProduct] = useState([])
+    //const [detailProduct2, setDetailProduct2] = useState([])
     const [carouselImage,setCarouselImage] = useState()
     const [image,setImage] = useState([])
     const { getProducts } = state.productsAPI
     useEffect(() =>{
         if(params.id){
-
+            if(isAdmin){
             products.forEach(product => {
                 if(product._id === params.id) {
                     setDetailProduct(product) 
                     setCarouselImage(product.images[0])
                 }
-            })
+            })}else{
+                products.forEach(product => {
+                    if(product._id === params.id) {
+                        setDetailProduct(product) 
+                        setCarouselImage(product.images[0])
+                    }
+                })
+                list.forEach(product => {
+                    if(product._id === params.id) {
+                        setDetailProduct(product) 
+                        
+                        setCarouselImage(product.images[0])
+                    }
+                })
+            }
             const getimage = async () => {
                 const res = await Axios.get(`/api/getimg/${params.id}`)
                 setImage(res.data.data)
@@ -43,6 +60,8 @@ function DetailProduct() {
        
     },[params.id, products])
     
+    console.log(products.length)
+    console.log(list)
 
     //console.log(image)
     //
@@ -71,7 +90,7 @@ function DetailProduct() {
         {
             isAdmin ?
             <>
-            <div className="fun">
+        <div className="fun">
         <h1 className="step">Product details</h1>
         <Link  className="fun1" to="/product">
             <img className="funmini" src={left}/>
@@ -82,7 +101,7 @@ function DetailProduct() {
             ''
         }
             <div className="detail">
-               { !carouselImage.url ? "error" : <div className="detailimg">
+               { !carouselImage.url ?  <img className="mainimg" id="featured" src={detailProduct.mainimg.url} alt="" width="1000" /> : <div className="detailimg">
                 
                 
                  <img className="mainimg" id="featured" src={carouselImage.url} alt="" width="1000" />
@@ -96,15 +115,7 @@ function DetailProduct() {
                           ))
                       }
                     </div> 
-                    
                   </div>  
-                
-                
-                    
-                    
-                    
-
-                
                 </div>}
                 
               
@@ -151,12 +162,13 @@ function DetailProduct() {
                     <div className="dpdata">
                     <span>dimensions</span>
                     <p>{detailProduct.dimensions}</p>
-                    <span>period</span>
-                    <p>{detailProduct.period}</p>
+                    <span>original</span>
+                    <p>{detailProduct.origin}</p>
                     <span>material</span>
                     <p>{detailProduct.material}</p>
-                    <span>condition</span>
-                    <p>{detailProduct.condition}</p>
+                    <span>age suggest</span>
+                    <p>{detailProduct.age}</p>
+                   
                     </div>
                     </div>
                     
@@ -177,9 +189,17 @@ function DetailProduct() {
             </h1>
             
                 <div className="products">
-                    {
-                        
+                    
+                      {  
                         products.map(product => {
+                            return product.category === detailProduct.category && product._id !== detailProduct._id
+                                ? <ProductItem key={product._id} product={product} /> : null
+                        })
+                    }
+                </div>
+                <div className="products">
+                    {
+                        list.map(product => {
                             return product.category === detailProduct.category && product._id !== detailProduct._id
                                 ? <ProductItem key={product._id} product={product} /> : null
                         })

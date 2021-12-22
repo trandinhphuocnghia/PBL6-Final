@@ -32,7 +32,7 @@ function Wlist() {
         }}
         
         if(wishlist.length === 0) 
-        return (<h2 style={{textAlign: "center", fontSize: "5rem"}}>Wishlist Empty</h2> )
+        return (<h2 style={{textAlign: "center", fontSize: "5rem",marginTop:"120px"}}>Wishlist Empty</h2> )
 
          return (
         <div className="Wishlist">

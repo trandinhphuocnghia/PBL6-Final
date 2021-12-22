@@ -1,21 +1,24 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom'
 import {GlobalState} from '../../../GlobalState'
 import searchic from '../../../img/search.svg'
 
 function Filters() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories
-
+    const [isAdmin] = state.userAPI.isAdmin
     const [category, setCategory] = state.productsAPI.category
     const [sort, setSort] = state.productsAPI.sort
     const [search, setSearch] = state.productsAPI.search
-
-
+    const [newsearch,setNewSearch] = state.productsAPI.newsearch
+    const [isChangeSearch,setIsChangeSearch] = state.productsAPI.isChangeSearch
+    const [listsearch,setListSearch] = state.productsAPI.listsearch
     const handleCategory = e => {
         setCategory(e.target.value)
         setSearch('')
     }
 
+    console.log(listsearch.length);
     return (
         <div className="filter_menu">
             <div className="row">
@@ -31,11 +34,38 @@ function Filters() {
                     }
                 </select>
             </div>
-
+              
+            <div className="Searchbox">  
+            {     isAdmin?
             <input  className="inputsearch" type="text" value={search} placeholder="Enter your search!"
-            onChange={e => setSearch(e.target.value.toLowerCase())} />
+            onChange={e => (
+            setSearch(e.target.value.toLowerCase()))} />
+            :
+            <input  className="inputsearch" type="text" value={newsearch} placeholder="Enter your search!"
+            onChange={e => {
+            setNewSearch(e.target.value.toLowerCase())    
+            setIsChangeSearch(true)
+            }} />
+            }
+            </div>
             
-            <img className="searchicft" src={searchic}/>
+            {
+            newsearch === ""?
+            ''
+            :
+            <div className="Searchlist">
+                { listsearch.length > 0 ? 
+                    listsearch.map(item=>(
+                        <div className="Searchlist_item">
+                            <Link to={`/detail/${item._id}`}><img src={item.mainimg.url}/></Link>
+                            <Link to={`/detail/${item._id}`}><p>{item.title}</p></Link>
+                        </div>
+                    ))
+                    : <p>Oops, not exist this product!</p>
+                }
+            </div>
+            }
+           
 
             <div className="row sort">
                 <span>Sort By: </span>

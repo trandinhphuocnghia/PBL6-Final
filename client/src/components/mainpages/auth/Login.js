@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { ShowErrMsg, ShowSuccessMsg } from '../utils/notification/notification'
-
-
+import lego1 from '../../../img/legoweb.jpg'
+import lego2 from '../../../img/lego02.png'
 ////initial state
 const initialState = {
     email:'',
@@ -35,20 +35,26 @@ function Login() {
 
     return (
         <div className="Login">
+        <div className="shape">
+            <img src={lego2}/>
+        </div>
+        <div className="shape2">
+            <img src={lego1}/>
+        </div>
         <div className="login-page position">
-            <form onSubmit={loginSubmit}>
+            <form className="fade" onSubmit={loginSubmit}>
                 <h2>Login</h2>
                 {err && ShowErrMsg(err)}
                 {success && ShowSuccessMsg(success)}
-                <input type="email" name="email" required
+                <input className="finp" type="email" name="email" required
                 placeholder="Email" value={user.email} onChange={onChangeInput} />
 
-                <input type="password" name="password" required autoComplete="on"
+                <input className="finp" type="password" name="password" required autoComplete="on"
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
 
                 <div className="row">
                     <button type="submit">Login</button>
-                    <Link to="/register">SignUp</Link>
+                    <div className="qs"><p>Dont have any account?</p><Link to="/register">Register now</Link></div>
                 </div>
             </form>
         </div>

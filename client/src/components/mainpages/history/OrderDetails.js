@@ -110,7 +110,7 @@ function OrderDetails() {
     }
 
     if(orderDetails.length === 0) return null;
-
+    
     return (
         <div className="history-page">
             <h2>Details Product</h2>

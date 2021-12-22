@@ -60,6 +60,7 @@ function Checkout() {
         window.location.href = "/history"
     }
 
+   
     //get total of cart
     useEffect(() => {
         const getTotal = () => {
@@ -156,6 +157,8 @@ function Checkout() {
                     tranSuccess={tranSuccess}
                 />
                 <p>* Số  tiền phải thanh toán trước : ${total / 2}</p>
+
+                
             </div>
             
             <div className="phonecall">
