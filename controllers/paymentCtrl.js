@@ -157,7 +157,7 @@ const sendmailStatus = async (email,status) => {
     var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
         from: 'GIOCATOLLI',
         to: email,
-        subject: 'Thank for your payment!',
+        subject: 'Shipping status!',
         text: 'Special thank, and hope you enjoy your toys.',//Thường thi mình không dùng cái này thay vào đó mình sử dụng html để dễ edit hơn
         html: content //Nội dung html mình đã tạo trên kia :))
     }

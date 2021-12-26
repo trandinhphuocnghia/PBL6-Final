@@ -156,7 +156,7 @@ function Homes() {
         {products.length === 0 && <Loading />}
         <div className="Title">
             <h1 className="titledetail">
-                Our Store
+                Custom Gifts
             </h1>
         </div>
         <Slider/>

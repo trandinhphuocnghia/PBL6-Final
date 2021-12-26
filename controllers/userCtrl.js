@@ -184,15 +184,17 @@ const sendmail = async (email) => {
     var content = '';
     content += `
     <div
-    style="text-align : center;border : 30px solid teal;display: flex;justify-content: center; align-self: center;flex-direction: column;">
-    <h1 style="font-size: 70px;color : teal;">Thanks for register !!!</h1>
-    <img src="https://raw.githubusercontent.com/Quanghuy180800/frontend_PBL6/master/images/logo_GIOCATTOLI.png" />
+    style="text-align : center;border : 30px solid teal;display: flex;flex-direction:column;justify-content: center; align-items: center;flex-direction: column;">
+    <h1 style="font-size: 20px;color : teal;">Wellcome.</h1>
+    <h1 style="font-size: 20px;color : teal;">Best Regard !! Thanks for your Register. Hope you enjoys this product!!!</h1>
+   
+    <img style="width:200px;  object-fit: cover;" src="https://raw.githubusercontent.com/Quanghuy180800/frontend_PBL6/master/images/logo_GIOCATTOLI.png" />
     </div>
     `;
     var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
         from: 'NQH-Test nodemailer',
         to: email,
-        subject: 'Test Nodemailer',
+        subject: 'Register success',
         text: 'Your text is here',//Thường thi mình không dùng cái này thay vào đó mình sử dụng html để dễ edit hơn
         html: content //Nội dung html mình đã tạo trên kia :))
     }
@@ -214,3 +216,4 @@ const sendmail = async (email) => {
 
 module.exports = userCtrl
 
+8260907

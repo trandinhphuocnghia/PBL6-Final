@@ -25,9 +25,9 @@ function Products() {
         setProducts([...products])
     }
 
-    const deleteProduct = async(id, public_id) => {
+    const deleteProduct = async(title,id, public_id) => {
         try {
-            if(window.confirm("Do you want to remove product")){
+            if(window.confirm(`Do you want to remove product : ${title}`)){
             setLoading(true)
             const destroyImg = axios.post('/api/destroy', {public_id},{
                 headers: {Authorization: token}
@@ -55,7 +55,7 @@ function Products() {
 
     const deleteAll = () =>{
         products.forEach(product => {
-            if(product.checked) deleteProduct(product._id, product.mainimg.public_id)
+            if(product.checked) deleteProduct(product.title,product._id, product.mainimg.public_id)
         })
     }
 

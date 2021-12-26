@@ -57,7 +57,7 @@ function CreateProduct() {
     }, [param.id, products])
 
     //console.log(lastid)
-
+    console.log(product._id)
     const handleUpload = async e => {
         e.preventDefault()
         try {
@@ -130,13 +130,13 @@ function CreateProduct() {
             } else {
                 console.log(product.public_id)
 
-                await axios.post('/api/products', { ...product, product_id: (parseInt(lastid) + 1) + "", mainimg }, {
+                const res = await axios.post('/api/products', { ...product, product_id: (parseInt(lastid) + 1) + "", mainimg }, {
                     headers: { Authorization: token }
                 })
                 setCallback(!callback)
                 setNproductid(product.product_id)
-                
-                history.push(`/uploadimg/${ (parseInt(lastid) + 1)}`)
+               console.log(res.data)
+                history.push(`/uploadimg/${ (parseInt(lastid) + 1)}?id=${res.data._id}`)
             }
 
 

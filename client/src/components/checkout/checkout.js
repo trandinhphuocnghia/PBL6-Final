@@ -129,7 +129,7 @@ function Checkout() {
                             {
                                 cart.map(product => (
                                     <div className="billdetail">
-                                        <Link><img class="billimg" src={product.images[1].url}/></Link>
+                                        <Link><img class="billimg" src={product.mainimg.url}/></Link>
                                         <div className="detailproductbill">
                                             <Link to={`/detail/${product._id}`}><p className="detailproductbilldt">{product.title}</p></Link>
                                             <p>SL:{product.quantity}</p>

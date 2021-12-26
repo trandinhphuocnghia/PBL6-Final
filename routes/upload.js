@@ -12,7 +12,7 @@ const Products = require('../models/productModel')
 
 // Upload image only admin can use
 router.post('/uploadmany/:id',auth,authAdmin, async(req, res) =>{
-    const urls =[]
+    var urls =[]
     const uploader = async (path) =>await cloudinary2.uploads(path,"minishop")
     
     try {
@@ -57,16 +57,20 @@ router.post('/uploadmany/:id',auth,authAdmin, async(req, res) =>{
           //  const  {path}  = file;
             const newPath =  uploader(file.tempFilePath)
             newPath.then(async function(result){
-               // urls.push(result)
-              //  res.json(urls)
+                urls.push(result.url)
+             
                 await Products.findOneAndUpdate({product_id:req.params.id},{
                     $push: {images:result}
                 })
+
+             //   console.log(result.url)
+             
             })
-            
+            //console.log(urls)
             fs.unlinkSync(file.tempFilePath)
           //  console.log(file.tempFilePath)
           }
+         
           res.json({data:"OK"})
     } catch (err) {
         return res.status(500).json({msg: err.message})
@@ -95,7 +99,7 @@ router.get('/getimg/:id',async(req,res)=>{
     try{
        console.log(req.params.id)
         const product = await Products.find({_id:req.params.id})
-      console.log(product[0].images)
+     // console.log(product[0].images)
        res.json({data:product[0].images})
     
     }catch{

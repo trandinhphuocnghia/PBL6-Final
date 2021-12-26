@@ -166,7 +166,7 @@ function DetailProduct() {
                     <p>{detailProduct.origin}</p>
                     <span>material</span>
                     <p>{detailProduct.material}</p>
-                    <span>age suggest</span>
+                    <span>age suggestion</span>
                     <p>{detailProduct.age}</p>
                    
                     </div>

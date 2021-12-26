@@ -1,6 +1,6 @@
+const cons = require('consolidate');
 const Products = require('../models/productModel')
 
-// Filter, sorting and paginating
 
 class APIfeatures {
     constructor(query, queryString){
@@ -8,7 +8,7 @@ class APIfeatures {
         this.queryString = queryString;
     }
     filtering(){
-       const queryObj = {...this.queryString} //queryString = req.query
+       const queryObj = {...this.queryString} 
 
        const excludedFields = ['page', 'sort', 'limit']
        excludedFields.forEach(el => delete(queryObj[el]))
@@ -75,7 +75,8 @@ const productCtrl = {
             })
 
             await newProduct.save()
-            res.json({msg: "Created a product"})
+            console.log(newProduct._id)
+            res.json({msg: "Created a product",_id:newProduct._id})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})

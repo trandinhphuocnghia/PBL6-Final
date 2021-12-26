@@ -19,11 +19,20 @@ function UploadImg() {
     const history = useHistory()
     const [check,setCheck] = useState(false)
    
-   
-
+    const [imagemores, setImagemore] = useState([])
+    
     const styleUpload = {
         display: images ? "block" : "none"
     }
+
+    const getimage = async () => {
+        const query = new URLSearchParams(search)
+      //  console.log(query.get("id"))
+        const res = await axios.get(`/api/getimg/${query.get("id")}`)
+       console.log(res.data.data)
+        setImagemore(res.data.data)
+    }
+    console.log(imagemores)
    /* const handleDestroy = async () => {
         try {
             if(!isAdmin) return alert("You're not an admin")
@@ -75,6 +84,9 @@ function UploadImg() {
            
             setLoading(false)
             setCheck(true)
+            if(res.data.data){
+            getimage()
+            }
            // setImages(res.data.data[0])
             //console.log(res.data.data)
            
@@ -106,18 +118,28 @@ function UploadImg() {
            // alert(err.response.data.msg)
         }
     }
-    console.log(check)
+   
+ 
    
     return(
         <>
-        <h1 className="step">Step 2: For more images</h1>
-           <div className="upload">
-            <input type="file" name="files" id="files" onChange={handleUpload} multiple/>
-           
-            
-        </div>
+        <div className="containter">
+                <div className="uploadContainer">
+                    <div className="fun">
+                    <h1 className="step">Step 2: For more images</h1>
+                    </div>
 
-        {
+                    <div className="upload">
+                        <input type="file" name="files" id="files" onChange={handleUpload} multiple />
+
+
+                    </div>
+                </div>
+                <div>
+                   
+                </div>
+                </div>
+                        {
             check === true ? 
             <div className="alertcontainer">
             <div className="alert">
@@ -134,9 +156,11 @@ function UploadImg() {
             <img className="iconup" src={warning}/>
             <h1>Please select more images</h1>
             </div>
-        }
+            }
         </>
     )
 }
 
 export default UploadImg;
+
+
